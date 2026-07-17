@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--<meta charset="utf-8">-->
+<title>プリント配布</title>
+</head>
+<body>
+
+計算練習プリント(pdf)<BR>
+ランダムに欲しい場合は以下のボタンをクリック。<BR>
+<button onclick="randomC1()"> 多項式の加減乗、一次方程式 </button><BR><BR>
+<button onclick="randomC2()"> 分数の加減乗除 </button><BR><BR>
+<button onclick="randomC3()"> 多項式の単項式による乗除 </button><BR><BR>
+<button onclick="randomC4()"> 多項式の加減、一次方程式 </button><BR><BR>
+<button onclick="randomC5()"> 連立方程式 </button><BR><BR>
+<BR>
+
+問題番号を指定して開きたい場合は以下から選んで「選択して開く」をクリック。<BR><BR>
+<select id="genre">
+    <option value="C1">多項式の加減乗、一次方程式</option>
+    <option value="C2">分数の加減乗除</option>
+    <option value="C3">多項式の単項式による乗除</option>
+    <option value="C4">多項式の加減、一次方程式</option>
+    <option value="C5">連立方程式</option>
+</select>
+
+<select id="sel"></select>
+
+<button onclick="selC()"> 選択して開く </button>
+<BR><BR>
+<BR><BR>
+(これらはmathtexを使用して自動的に生成したファイルをそのまま利用しています)<BR>
+
+<script>
+function randomC1() {
+    const max = 100;
+    const n = Math.floor(Math.random() * max) + 1;
+    const filename = "./C1/C1_" + String(n).padStart(3,'0') + ".pdf";
+    window.open(filename,"_blank");
+}
+function randomC2() {
+    const max = 100;
+    const n = Math.floor(Math.random() * max) + 1;
+    const filename = "./C2/C2_" + String(n).padStart(3,'0') + ".pdf";
+    window.open(filename,"_blank");
+}
+function randomC3() {
+    const max = 100;
+    const n = Math.floor(Math.random() * max) + 1;
+    const filename = "./C3/C3_" + String(n).padStart(3,'0') + ".pdf";
+    window.open(filename,"_blank");
+}
+function randomC4() {
+    const max = 100;
+    const n = Math.floor(Math.random() * max) + 1;
+    const filename = "./C4/C4_" + String(n).padStart(3,'0') + ".pdf";
+    window.open(filename,"_blank");
+}
+function randomC5() {
+    const max = 100;
+    const n = Math.floor(Math.random() * max) + 1;
+    const filename = "./C5/C5_" + String(n).padStart(3,'0') + ".pdf";
+    window.open(filename,"_blank");
+}
+function selC() {
+    const genre = document.getElementById("genre").value; 
+    const num = document.getElementById("sel").value; 
+    const filename = "./" + genre + "/" + genre + "_" + num + ".pdf";
+    window.open(filename,"_blank");
+}
+for (let i = 1; i <= 100; i++) {
+const select = document.getElementById("sel");
+    const option = document.createElement("option");
+    const num = String(i).padStart(3, '0');
+    option.value = num;
+    option.text = num;
+    select.appendChild(option);
+}
+</script>
+
+
+
+
+</body>
+</html>
